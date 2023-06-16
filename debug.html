@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pre-Order Makanan</title>
+</head>
+<body>
+    <h1>Formulir Pre-Order</h1>
+    <form onsubmit="kirimPesanan(event)">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" required><br><br>
+
+        <label for="telepon">Nomor Telepon:</label>
+        <input type="tel" id="telepon" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br><br>
+
+        <label for="alamat">Alamat Pengiriman:</label>
+        <textarea id="alamat" required></textarea><br><br>
+
+        <label for="tanggalPengiriman">Tanggal Pengiriman:</label>
+        <input type="date" id="tanggalPengiriman" required><br><br>
+
+        <label for="detailPesanan">Detail Pesanan:</label>
+        <textarea id="detailPesanan" required></textarea><br><br>
+
+        <button type="submit">Kirim Pre-Order</button>
+    </form>
+
+    <button onclick="lanjutChat()">Continue to Chat</button>
+
+    <script>
+        function kirimPesanan(event) {
+            event.preventDefault();
+            var nama = document.getElementById('nama').value;
+            var telepon = document.getElementById('telepon').value;
+            var email = document.getElementById('email').value;
+            var alamat = document.getElementById('alamat').value;
+            var tanggalPengiriman = document.getElementById('tanggalPengiriman').value;
+            var detailPesanan = document.getElementById('detailPesanan').value;
+
+            var pesan = "Pre-Order Details:\n\n" +
+                        detailPesanan + "\n\n" +
+                        "Alamat Pengiriman:\n" +
+                        alamat + "\n\n" +
+                        "Tanggal Pengiriman:\n" +
+                        tanggalPengiriman + "\n\n" +
+                        "Informasi Kontak:\n" +
+                        "Nama: " + nama + "\n" +
+                        "Telepon: " + telepon + "\n" +
+                        "Email: " + email;
+
+            var whatsappURL = "https://api.whatsapp.com/send?phone=+62 81386344436&text=" + encodeURIComponent(pesan);
+            window.location.href = whatsappURL;
+        }
+
+        function lanjutChat() {
+            var whatsappURL = "https://api.whatsapp.com/send?phone=+62 81386344436";
+            window.location.href = whatsappURL;
+        }
+    </script>
+</body>
+</html>

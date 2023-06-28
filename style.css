@@ -10,6 +10,7 @@
     text-align: center;
     padding: 20px;
     z-index: 9999;
+    
 }
 
 .warning h1 {
@@ -22,3 +23,22 @@
         display: block;
     }
 }
+
+#clock {
+    font-size: 52px;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  #location {
+    font-size: 24px;
+    color: #646464;
+    margin-top: -5px;
+  }
+
+  #clock-container {
+    text-align: center;
+    padding: -5px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);}
